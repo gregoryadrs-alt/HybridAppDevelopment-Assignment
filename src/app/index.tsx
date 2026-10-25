@@ -2,7 +2,6 @@ import { useRouter } from 'expo-router';
 import { useState } from 'react';
 import {
   ActivityIndicator,
-  Alert,
   KeyboardAvoidingView,
   Platform,
   Pressable,
@@ -109,20 +108,8 @@ export default function AuthScreen() {
         return;
       }
 
-      const welcomeText = `Welcome back, ${trimmedUsername}!`;
-
-      if (Platform.OS === 'web') {
-        window.alert(welcomeText);
-      } else {
-        Alert.alert('Login Successful', welcomeText, [
-          {
-            text: 'Continue',
-            onPress: () => {
-              router.push('/explore' as any);
-            },
-          },
-        ]);
-      }
+      // Login success: Navigate directly to the homepage in (tabs)
+      router.replace('/(tabs)/home' as any);
     }, 700);
   };
 
