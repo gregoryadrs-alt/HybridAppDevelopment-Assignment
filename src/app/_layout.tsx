@@ -1,13 +1,18 @@
 import { Stack } from 'expo-router';
-import '../global.css'; // Sesuaikan lokasi global.css kamu
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import '../global.css';
 
 export default function RootLayout() {
   return (
-    <Stack screenOptions={{ headerShown: false }}>
-      {/* Jangan daftarkan 'explore' di sini! */}
-      <Stack.Screen name="index" />
-      <Stack.Screen name="(auth)" />
-      <Stack.Screen name="(tabs)" />
-    </Stack>
+    <SafeAreaProvider>
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="index" />
+        <Stack.Screen name="(auth)" />
+        <Stack.Screen name="(tabs)" />
+        <Stack.Screen name="profile" />
+        <Stack.Screen name="notifications" />
+        <Stack.Screen name="transaction-detail" />
+      </Stack>
+    </SafeAreaProvider>
   );
 }

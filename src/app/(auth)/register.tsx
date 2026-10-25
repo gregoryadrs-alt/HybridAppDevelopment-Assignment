@@ -1,7 +1,9 @@
 import { router } from 'expo-router';
 import { ArrowLeft, Lock, Mail, User } from 'lucide-react-native';
 import { useState } from 'react';
-import { SafeAreaView, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Text, TextInput, TouchableOpacity, View } from 'react-native';
+
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function RegisterScreen() {
   const [fullName, setFullName] = useState('');

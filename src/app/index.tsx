@@ -14,6 +14,14 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 type AuthMode = 'signin' | 'signup';
 
+const activeTabShadow = {
+  shadowColor: '#000',
+  shadowOffset: { width: 0, height: 1 },
+  shadowOpacity: 0.1,
+  shadowRadius: 2,
+  elevation: 2,
+};
+
 export default function AuthScreen() {
   const [mode, setMode] = useState<AuthMode>('signin');
   const [username, setUsername] = useState('');
@@ -140,18 +148,22 @@ export default function AuthScreen() {
               {/* Mode Toggle Tabs */}
               <View className="flex-row rounded-xl bg-slate-200 dark:bg-slate-800 p-1 mb-2">
                 <Pressable
+                  key="signin-tab"
                   onPress={() => resetFormState('signin')}
+                  style={mode === 'signin' ? activeTabShadow : undefined}
                   className={`flex-1 py-2 items-center justify-center rounded-lg ${
-                    mode === 'signin' ? 'bg-white dark:bg-slate-700 shadow-sm' : ''
+                    mode === 'signin' ? 'bg-white dark:bg-slate-700' : ''
                   }`}>
                   <Text className={`text-sm ${mode === 'signin' ? 'font-bold text-slate-900 dark:text-white' : 'text-slate-500'}`}>
                     Sign In
                   </Text>
                 </Pressable>
                 <Pressable
+                  key="signup-tab"
                   onPress={() => resetFormState('signup')}
+                  style={mode === 'signup' ? activeTabShadow : undefined}
                   className={`flex-1 py-2 items-center justify-center rounded-lg ${
-                    mode === 'signup' ? 'bg-white dark:bg-slate-700 shadow-sm' : ''
+                    mode === 'signup' ? 'bg-white dark:bg-slate-700' : ''
                   }`}>
                   <Text className={`text-sm ${mode === 'signup' ? 'font-bold text-slate-900 dark:text-white' : 'text-slate-500'}`}>
                     Sign Up
@@ -161,14 +173,14 @@ export default function AuthScreen() {
 
               {/* Success Message */}
               {successMessage ? (
-                <View className="bg-emerald-500/15 border border-emerald-500/40 rounded-xl py-2 px-3">
+                <View key="success-msg" className="bg-emerald-500/15 border border-emerald-500/40 rounded-xl py-2 px-3">
                   <Text className="text-emerald-600 dark:text-emerald-400 text-sm">{successMessage}</Text>
                 </View>
               ) : null}
 
               {/* Error Message */}
               {error ? (
-                <View className="bg-red-500/15 border border-red-500/40 rounded-xl py-2 px-3">
+                <View key="error-msg" className="bg-red-500/15 border border-red-500/40 rounded-xl py-2 px-3">
                   <Text className="text-red-600 dark:text-red-400 text-sm">{error}</Text>
                 </View>
               ) : null}
@@ -224,7 +236,7 @@ export default function AuthScreen() {
 
               {/* Confirm Password */}
               {mode === 'signup' ? (
-                <View className="gap-1">
+                <View key="confirm-password-field" className="gap-1">
                   <Text className="text-sm font-semibold text-slate-700 dark:text-slate-200">
                     Confirm Password
                   </Text>
@@ -258,9 +270,8 @@ export default function AuthScreen() {
               <Pressable
                 onPress={handleAuth}
                 disabled={loading}
-                className={`h-12 rounded-xl justify-center items-center mt-2 bg-indigo-600 active:bg-indigo-700 ${
-                  loading ? 'opacity-70' : ''
-                }`}>
+                style={loading ? { opacity: 0.7 } : undefined}
+                className="h-12 rounded-xl justify-center items-center mt-2 bg-indigo-600 active:bg-indigo-700">
                 {loading ? (
                   <ActivityIndicator color="#ffffff" />
                 ) : (
