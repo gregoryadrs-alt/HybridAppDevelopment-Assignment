@@ -9,46 +9,42 @@ export default function LoginScreen() {
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
-    // Navigate to homepage inside (tabs)
-    console.log('-> TOMBOL SIGN IN DIKLIK!');
     router.replace('/(tabs)/home' as any);
   };
 
   return (
-    <SafeAreaView className="flex-1 bg-[#051424] justify-center px-6">
+    <SafeAreaView className="flex-1 bg-slate-50 justify-center px-6">
       <View className="mb-8">
-        <Text className="text-3xl font-bold text-[#d4e4fa] mb-2">Welcome Back</Text>
-        <Text className="text-sm text-[#909098]">
-          Sign in to access your encrypted treasury node.
+        <Text className="text-3xl font-bold text-slate-900 mb-2">Selamat Datang 👋</Text>
+        <Text className="text-sm text-slate-500">
+          Masuk ke akun Smart Budget Tracker Anda.
         </Text>
       </View>
 
       {/* Form Input */}
       <View className="gap-4 mb-6">
-        {/* Email Input */}
-        <View className="flex-row items-center bg-[#122131] border border-[#46464d]/30 rounded-xl px-4 py-3">
-          <Mail size={18} color="#909098" />
+        <View className="flex-row items-center bg-white border border-slate-300 rounded-xl px-4 py-3">
+          <Mail size={18} color="#94a3b8" />
           <TextInput
-            placeholder="Email Address"
-            placeholderTextColor="#909098"
+            placeholder="Alamat Email"
+            placeholderTextColor="#94a3b8"
             value={email}
             onChangeText={setEmail}
             keyboardType="email-address"
             autoCapitalize="none"
-            className="flex-1 ml-3 text-sm text-[#d4e4fa]"
+            className="flex-1 ml-3 text-sm text-slate-900"
           />
         </View>
 
-        {/* Password Input */}
-        <View className="flex-row items-center bg-[#122131] border border-[#46464d]/30 rounded-xl px-4 py-3">
-          <Lock size={18} color="#909098" />
+        <View className="flex-row items-center bg-white border border-slate-300 rounded-xl px-4 py-3">
+          <Lock size={18} color="#94a3b8" />
           <TextInput
-            placeholder="Password"
-            placeholderTextColor="#909098"
+            placeholder="Kata Sandi"
+            placeholderTextColor="#94a3b8"
             value={password}
             onChangeText={setPassword}
             secureTextEntry
-            className="flex-1 ml-3 text-sm text-[#d4e4fa]"
+            className="flex-1 ml-3 text-sm text-slate-900"
           />
         </View>
       </View>
@@ -57,17 +53,16 @@ export default function LoginScreen() {
       <TouchableOpacity
         onPress={handleLogin}
         activeOpacity={0.8}
-        className="flex-row items-center justify-center gap-2 py-3.5 rounded-xl bg-[#00e296] mb-4"
-      >
-        <Text className="font-bold text-[#003822] text-base">Sign In</Text>
-        <ArrowRight size={18} color="#003822" />
+        className="flex-row items-center justify-center gap-2 py-3.5 rounded-xl bg-indigo-600 mb-4">
+        <Text className="font-bold text-white text-base">Masuk Sekarang</Text>
+        <ArrowRight size={18} color="#ffffff" />
       </TouchableOpacity>
 
       {/* Footer Nav to Register */}
       <View className="flex-row justify-center items-center gap-1">
-        <Text className="text-xs text-[#909098]">Don&apos;t have an account?</Text>
+        <Text className="text-xs text-slate-500">Belum punya akun?</Text>
         <TouchableOpacity onPress={() => router.push('/(auth)/register' as any)}>
-          <Text className="text-xs font-bold text-[#70ffba]">Register</Text>
+          <Text className="text-xs font-bold text-indigo-600">Daftar Akun</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
