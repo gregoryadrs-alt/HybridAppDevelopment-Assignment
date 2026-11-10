@@ -1,4 +1,3 @@
-import React from 'react';
 import { Text, View } from 'react-native';
 
 const cardShadow = {
@@ -29,7 +28,7 @@ export function BadgeCard({
   return (
     <View
       style={cardShadow}
-      className={`w-[48%] rounded-2xl p-3.5 border ${
+      className={`w-full rounded-2xl p-3.5 border ${
         unlocked
           ? 'bg-white border-slate-100'
           : 'bg-slate-100/70 border-dashed border-slate-300 opacity-60'
