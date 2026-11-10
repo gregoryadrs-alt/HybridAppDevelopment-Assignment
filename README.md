@@ -158,5 +158,12 @@ Join our community of developers creating universal apps.
   2. OCR Smart Scan: Pemindaian struk belanja otomatis menggunakan kamera ponsel.                                                        
   3. Ekspor Laporan: Fitur unduh laporan keuangan bulanan dalam format PDF / Excel
 
-  Link Video Demo : 
+   Link Video Demo : https://drive.google.com/drive/u/0/folders/1561i4vqqvwdQerxDYUaq6RFjNP8VJSoS
+   
+   SS Aplikasi :
+  ![alt text](<WhatsApp Image 2026-11-10 at 15.05.55.jpeg>)
+
+  ![alt text](<WhatsApp Image 2026-11-10 at 15.05.54 (1).jpeg>)
+
+  ![alt text](<WhatsApp Image 2026-11-10 at 15.05.54.jpeg>)
   
