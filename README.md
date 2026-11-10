@@ -160,10 +160,4 @@ Join our community of developers creating universal apps.
 
    Link Video Demo : https://drive.google.com/drive/u/0/folders/1561i4vqqvwdQerxDYUaq6RFjNP8VJSoS
    
-   SS Aplikasi :
-  ![alt text](<WhatsApp Image 2026-11-10 at 15.05.55.jpeg>)
-
-  ![alt text](<WhatsApp Image 2026-11-10 at 15.05.54 (1).jpeg>)
-
-  ![alt text](<WhatsApp Image 2026-11-10 at 15.05.54.jpeg>)
-  
+   SS Aplikasi : https://drive.google.com/drive/folders/1fG5xnxA_zFADyWxjon--C1MhpwURgkEP?usp=sharing
