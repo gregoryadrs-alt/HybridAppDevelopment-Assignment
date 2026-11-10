@@ -133,7 +133,7 @@ Join our community of developers creating universal apps.
   5. Melihat rincian kuitansi transaksi lengkap serta riwayat status baca notifikasi.     
 
 
-4.Tabel Pemetaan Kebutuhan ke layar dan komponen
+## 4. Tabel Pemetaan kebutuhan ke layar dan komponen
 | Kebutuhan Pengguna | Layar (*Screen*) | Komponen Utama |
 | --- | --- | --- |
 | Autentikasi Pengguna | index.tsx, (auth)/login.tsx | TextInput, Pressable, Form Validation State |
